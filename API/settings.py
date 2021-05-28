@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-m0z@w2&_$#2=0pt(b_k#l*=wck&8u!i_9bjkf_12c(!kh93^h^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'https://api-lawerance.herokuapp.com/']
 
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'API_server.apps.ApiServerConfig',
+
 ]
 
 MIDDLEWARE = [
