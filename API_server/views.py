@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -32,20 +34,20 @@ def home(request):
                                  'Please choose a http request')
             return render(request, 'base.html')
 
-
         if httpReq == "GET":
             r = requests.get(url)
-            return render(request, 'base.html', {'data': r.json()})
+
+            return render(request, 'base.html', {'data': r.text})
 
         if httpReq == "POST":
             jsonDataFromUser = request.POST.get("jsonData")
             r = requests.post(url, data=jsonDataFromUser)
 
-            return render(request, 'base.html', {'data': r.json()})
+            return render(request, 'base.html', {'data': r.text})
 
         if httpReq == "PUT":
             r = requests.put(url)
-            return render(request, 'base.html', {'data': r.json()})
+            return render(request, 'base.html', {'data': r.text})
 
     return render(request, 'base.html')
 
