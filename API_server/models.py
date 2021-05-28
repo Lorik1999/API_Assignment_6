@@ -11,6 +11,10 @@ class Pizza(models.Model):
     price= models.DecimalField(decimal_places=2,max_digits=4)
     toppings= models.ManyToManyField(Topping)
 
+class Pizza_Ordered(models.Model):
+    pizza= models.ManyToManyField(Pizza, blank=True)
+    number_ordered = models.IntegerField()
+
 class Order(models.Model):
     takeaway= models.BooleanField()
     payment_type= models.CharField(max_length=200)
@@ -21,9 +25,13 @@ class Order(models.Model):
     country= models.CharField(max_length=50)
     zipcode=models.CharField(max_length=50)
     ordered_at=models.DateTimeField()
-    delivery_time=models.DateTimeField(auto_now_add=True)
+    delivery_time=models.DateTimeField()
     status=models.CharField(max_length=50)
-    pizzas=models.ManyToManyField(Pizza)
+    pizzas=models.ManyToManyField(Pizza_Ordered, blank=True)
+    cancelled = models.BooleanField(default=False)
+
+
+
 
 
 

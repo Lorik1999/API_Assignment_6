@@ -21,9 +21,14 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('home', views.home),
     # re_path(r'^pizza/(?P<pizza_id>)/$', views.Get_Pizza.get,name='Get_Pizza'),
     # re_path(r'^articles/(?P<year>[0-9]{4})/$', views.year_archive),
     path('pizza/',views.get_pizza),
     path('pizza/<int:pizza_id>/',views.get_pizza),
-    path('order',views.order_pizza)
+    path('order',views.order_pizza),
+    path('order/<slug:order_id>/',views.order_pizza),
+    path('order/deliverytime/<int:order_id>/', views.get_delivery_time),
+    path('order/cancel/<int:order_id>', views.cancel_order),
+
 ]
