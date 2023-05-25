@@ -1,5 +1,6 @@
 # API_Assignment_6
- Welcome to assignment 6 java, made by i6249348 - Laurence Manoukian and i6260219 - Oscar van Bommel
+ Welcome to assignment 6 java, made by i6249348 - Laurence Manoukian and i6260219 - Oscar van Bommel. 
+ 
  Due to the video being too large, even at 456mb which was below the specified limit, i couldn't upload the video for you to inspect.
  
  *Please note that the code was made on the intellij IDE.*
